@@ -1,7 +1,9 @@
 import type { GroqResponse, ActionItem, MeetingResult, Priority } from "@/types";
 
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = "llama-3.3-70b-versatile";
+// Env-configurable (VITE_GROQ_MODEL) so a future deprecation is a config change.
+// Must match the server default in api/summarize.ts (GROQ_MODEL).
+const MODEL = (import.meta.env.VITE_GROQ_MODEL as string | undefined) || "openai/gpt-oss-120b";
 const MAX_WORDS_PER_CHUNK = 10000;
 
 export class GroqError extends Error {

@@ -3,7 +3,8 @@
 // Never expose GROQ_API_KEY to the browser (no VITE_ prefix).
 
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = "llama-3.3-70b-versatile";
+// Env-configurable so a future deprecation is a config change, not a code change.
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 const MAX_BODY_CHARS = 120000;
 
 export default async function handler(req: any, res: any) {

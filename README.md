@@ -1,6 +1,6 @@
 # ActionPoint
 
-A meeting-notes-to-action-items summarizer. Paste a meeting transcript, and ActionPoint uses the Groq API (LLaMA 3.3 70B) to generate a summary, key decisions, open questions, and an editable action items table with owners, due dates, and priorities.
+A meeting-notes-to-action-items summarizer. Paste a meeting transcript, and ActionPoint uses the Groq API (GPT-OSS 120B) to generate a summary, key decisions, open questions, and an editable action items table with owners, due dates, and priorities.
 
 ## Features
 
@@ -75,7 +75,7 @@ production Groq key is never exposed to the browser.
 
 - React + Vite + TypeScript
 - Tailwind CSS
-- Groq API (LLaMA 3.3 70B Versatile, OpenAI-compatible endpoint)
+- Groq API (GPT-OSS 120B, OpenAI-compatible endpoint)
 - 100% client-side — no backend required
 
 ## Security Note
