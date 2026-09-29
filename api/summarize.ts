@@ -13,7 +13,7 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
 
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = (process.env.GROQ_API_KEY || "").trim();
   if (!apiKey) {
     return res.status(501).json({
       error: "GROQ_API_KEY is not configured on the server. Add it in Vercel Project Settings → Environment Variables.",
